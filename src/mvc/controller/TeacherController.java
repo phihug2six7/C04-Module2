@@ -1,2 +1,4 @@
-package mvc.controller;public class TeacherController {
+package mvc.controller;
+
+public class TeacherController {
 }

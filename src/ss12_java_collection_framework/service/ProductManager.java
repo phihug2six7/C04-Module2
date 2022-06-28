@@ -1,15 +1,17 @@
-package ss12_java_collection_framework.baitap.arraylist_linkedlist;
+package ss12_java_collection_framework.service;
 
-import ss5_accessmodifier_static_method_static_property.thuchanh.StudentManager;
+import ss12_java_collection_framework.model.Product;
+import ss12_java_collection_framework.until.Ascending;
+import ss12_java_collection_framework.until.SortDescending;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProductManager {
+public class ProductManager implements IProductManager {
     Scanner scanner = new Scanner(System.in);
-    static List<Product> products = new ArrayList<>();
+    public static List<Product> products = new ArrayList<>();
 
     static {
         products.add(new Product(1, "hung", 10000));
@@ -74,15 +76,16 @@ public class ProductManager {
     }
 
     public void sortProduct(){
-        Collections.sort(products);
+        Ascending productSortAscending = new Ascending();
+      SortDescending productSortDescending = new SortDescending();
+        System.out.println("Which sort do you want? " +
+                "\n1. Ascending." +
+                "\n2. Descending.");
+        int choice = Integer.parseInt(scanner.nextLine());
+        if (choice == 1) {
+            Collections.sort(products, productSortAscending);
+        } else Collections.sort(products, productSortDescending);
         displayProduct();
-    }
-
-    public static void main(String[] args) {
-        ProductManager productManager=new ProductManager();
-
-        productManager.sortProduct();
-
     }
 }
 

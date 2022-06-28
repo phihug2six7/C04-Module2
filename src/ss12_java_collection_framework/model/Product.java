@@ -1,4 +1,4 @@
-package ss12_java_collection_framework.baitap.arraylist_linkedlist;
+package ss12_java_collection_framework.model;
 
 public class Product implements Comparable<Product> {
     private int id;
@@ -50,12 +50,17 @@ public class Product implements Comparable<Product> {
 
     @Override
     public int compareTo(Product o) {
-        if (this.price>o.price){
-            return -1;
-        }else if (this.price<o.price){
-            return 1;
-        }else {
-            return 0;
-        }
+        return 0;
     }
+
+//    @Override
+//    public int compareTo(Product o) {
+//        if (this.price>o.price){
+//            return -1;
+//        }else if (this.price<o.price){
+//            return 1;
+//        }else {
+//            return 0;
+//        }
+//    }
 }
